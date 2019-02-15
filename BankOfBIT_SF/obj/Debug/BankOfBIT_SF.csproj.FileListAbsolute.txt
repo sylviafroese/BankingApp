@@ -1,0 +1,2 @@
+C:\Users\slfroese\source\repos\BankOfBIT_SF\BankOfBIT_SF\obj\Debug\BankOfBIT_SF.csprojAssemblyReference.cache
+C:\Users\slfroese\source\repos\BankOfBIT_SF\BankOfBIT_SF\obj\Debug\BankOfBIT_SF.csproj.CoreCompileInputs.cache

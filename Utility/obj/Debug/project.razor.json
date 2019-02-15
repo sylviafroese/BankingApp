@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\slfroese\\source\\repos\\BankOfBIT_SF\\Utility\\Utility.csproj",
+  "TargetFramework": "v4.0",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
