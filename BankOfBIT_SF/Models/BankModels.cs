@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace BankOfBIT_SF.Models
 {
     
-    class AccountState
+    public abstract class AccountState
     {
         [Key]
         public int AccountStateId { get; set; }
@@ -30,6 +31,7 @@ namespace BankOfBIT_SF.Models
             }
         }
 
+        
         public virtual double RateAdjustment(BankAccount bankAccount)
         {
             return 0.0;
@@ -41,7 +43,7 @@ namespace BankOfBIT_SF.Models
         }
     }
 
-    class BankAccount
+    public abstract class BankAccount
     {
         [Key]
         public int BankAccountId { get; set; }
@@ -52,10 +54,12 @@ namespace BankOfBIT_SF.Models
         [Required]
         [ForeignKey("ClientId")]
         public int ClientId { get; set; }
+        public Client Client { get; set; }
 
         [Required]
         [ForeignKey("AccountStateId")]
         public int AccountStateId { get; set; }
+        public AccountState AccountState { get; set; }
 
         [Required]
         [DisplayName("Current Balance")]
@@ -81,18 +85,20 @@ namespace BankOfBIT_SF.Models
             {
                 return GetType().Name;
             }
-         }
-
+        }
 
         public virtual void SetNextAccountNumber() { }
+
         public void ChangeState() { }
     }
 
-    class Client
+    public class Client
     {
+        [Required]
         [Key]
         public int ClientId { get; set; }
-
+   
+        [Required]
         [Range(10000000, 99999999)]
         [DisplayName("Client Number")]
         public long ClientNumber { get; set; }
@@ -120,13 +126,13 @@ namespace BankOfBIT_SF.Models
         public string Province { get; set; }
 
         [Required]
-        [RegularExpression("^[A-Z]\\d[A-Z \\d[A-Z]\\d$")]
+        [RegularExpression("^[A-Z]\\d[A-Z] \\d[A-Z]\\d$")]
         [DisplayName("Postal Code")]
         public string PostalCode { get; set; }
 
         [Required]
         [DisplayName("Date Created")]
-        [DisplayFormat(DataFormatString ="0:yyyy-mm-dd")]
+        [DisplayFormat(DataFormatString ="{0:yyyy-mm-dd}")]
         public DateTime DateCreated { get; set; }
 
         [DisplayName("Client Notes")]
@@ -149,13 +155,15 @@ namespace BankOfBIT_SF.Models
             }
         }
 
+               
+
         public void SetNextClientNumber()
         {
             //NotImplementedException;
         }
     }
     
-    class BronzeState : AccountState
+    public class BronzeState : AccountState
     {
         private BronzeState bronzeState;
         private BronzeState() { }
@@ -166,7 +174,7 @@ namespace BankOfBIT_SF.Models
     }
 
 
-    class GoldState : AccountState
+    public class GoldState : AccountState
     {
         private GoldState goldState;
         private GoldState() { }
@@ -176,7 +184,7 @@ namespace BankOfBIT_SF.Models
         public override double RateAdjustment(BankAccount bankAccount) { return 0.0; }
     }
 
-    class SilverState : AccountState
+    public class SilverState : AccountState
     {
         private SilverState silverState;
         private SilverState() { }
@@ -186,7 +194,7 @@ namespace BankOfBIT_SF.Models
         public override double RateAdjustment(BankAccount bankAccount) { return 0.0; }
     }
 
-    class PlatinumState : AccountState
+    public class PlatinumState : AccountState
     {
         private PlatinumState platinumState;
         private PlatinumState() { }
@@ -196,16 +204,16 @@ namespace BankOfBIT_SF.Models
         public override double RateAdjustment(BankAccount bankAccount) { return 0.0; }
     }
 
-    class SavingsAccount : BankAccount
+    public class SavingsAccount : BankAccount
     {
         [Required]
         [DisplayName("Service Charges")]
         public double SavingsServiceCharges { get; set; }
 
-        public override void SetNextAccountNumber() {/* NotImplementedException;*/ }
+        public override void SetNextAccountNumber() { } /* NotImplementedException;*/
     }
 
-    class MortgageAccount : BankAccount
+    public class MortgageAccount : BankAccount
     {
         [Required]
         [DisplayName("Interest Rate")]
@@ -215,26 +223,26 @@ namespace BankOfBIT_SF.Models
         [DisplayName("Ammortization")]
         public int Ammortization { get; set; }
 
-        public override void SetNextAccountNumber() { /*NotImplementedException;*/ }
+        public override void SetNextAccountNumber() { }  /*NotImplementedException;*/
     }
 
-    class InvestmentAccount : BankAccount
+    public class InvestmentAccount : BankAccount
     {
         [Required]
         [DisplayName("Interest Rate")]
         public double InterestRate { get; set; }
 
-        public override void SetNextAccountNumber() { /*NotImplementedException; */}
+        public override void SetNextAccountNumber() { } /*NotImplementedException; */
     }
 
 
-    class ChequingAccount : BankAccount
+    public class ChequingAccount : BankAccount
     {
         [Required]
         [DisplayName("Service Charges")]
         public double ChequingServiceCharges { get; set; }
 
-        public override void SetNextAccountNumber() { /*NotImplementedException;*/ }
+        public override void SetNextAccountNumber() { } /*NotImplementedException;*/
     }
 
 

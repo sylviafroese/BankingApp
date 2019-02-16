@@ -18,9 +18,18 @@ C:\Users\Administrator\Desktop\Programming III\Assignments\Assignment 2 Files\Ut
 C:\Users\Administrator\Desktop\Programming III\Assignments\Assignment 2 Files\Utility\bin\Debug\Utility.pdb
 C:\Users\Administrator\Desktop\Programming III\Assignments\Assignment 2 Files\Utility\obj\Debug\Utility.dll
 C:\Users\Administrator\Desktop\Programming III\Assignments\Assignment 2 Files\Utility\obj\Debug\Utility.pdb
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\Utility.dll.config
 C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\Utility.dll
 C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\Utility.pdb
-C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.dll
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.xml
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.csproj.CopyComplete
 C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.dll
 C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.pdb
+C:\Users\slfroese\source\repos\BankOfBIT_SF\Utility\obj\Debug\Utility.csprojAssemblyReference.cache
